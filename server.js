@@ -17,19 +17,19 @@ app.listen(data.port);
 // GET '/'
 app.get('/', function(req, res){
 	QR.config(req, res);
-    Reponse.send(QR.img());
+	Reponse.send(QR.img());
 });
 
 // GET '/img'
 app.get('/img', function(req, res){
 	QR.config(req, res);
-    Reponse.send(QR.img());
+	Reponse.send(QR.img());
 });
 
 // GET '/tbl'
 app.get('/tbl', function(req, res){
 	QR.config(req, res);
-    Reponse.send(QR.tbl());
+	Reponse.send(QR.tbl());
 });
 
 var QR = {
