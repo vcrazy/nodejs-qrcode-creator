@@ -5,8 +5,7 @@ var express = require('express'),
 		text: 'http://ganev.bg',
 		size: 4, // 1 - 10
 		err_corr: 'M', // 'L', 'M', 'Q', 'H'
-		port: 4586,
-		struct: 'img'
+		port: 4586
 	},
 	Request,
 	Response;
