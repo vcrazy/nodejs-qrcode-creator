@@ -39,6 +39,7 @@ var QR = {
 
 		data.text = Request.query.text || data.text;
 		data.size = Request.query.size || data.size;
+		data.err_corr = Request.query.err_corr || data.err_corr;
 	},
 	img: function(){
 		return QR.create('Img');
