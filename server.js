@@ -1,17 +1,18 @@
 var express = require('express'),
 	app = express(),
 	qrcode = require('./qrcode.js'),
-	data = {
+	defaults = {
 		text: 'http://ganev.bg',
 		size: 4, // 1 - 10
 		err_corr: 'M', // 'L', 'M', 'Q', 'H'
 		port: 4586
 	},
+	data,
 	Request,
 	Response;
 
 // start the drums
-app.listen(data.port);
+app.listen(defaults.port);
 
 // GET '/'
 app.get('/', function(req, res){
@@ -39,9 +40,9 @@ var QR = {
 		var size = Request.query.size,
 			err_corr = Request.query.err_corr;
 
-		data.text = Request.query.text || data.text;
-		data.size = (size && size >= 1 && size <=10) ? size : data.size;
-		data.err_corr = (err_corr && ['L', 'M', 'Q', 'H'].indexOf(err_corr.toUpperCase()) > -1) ? err_corr.toUpperCase() : data.err_corr;
+		data.text = Request.query.text || defaults.text;
+		data.size = (size && size >= 1 && size <=10) ? size : defaults.size;
+		data.err_corr = (err_corr && ['L', 'M', 'Q', 'H'].indexOf(err_corr.toUpperCase()) > -1) ? err_corr.toUpperCase() : defaults.err_corr;
 	},
 	img: function(){
 		return QR.create('Img');
