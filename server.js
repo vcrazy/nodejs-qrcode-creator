@@ -7,7 +7,7 @@ var express = require('express'),
 		err_corr: 'M', // 'L', 'M', 'Q', 'H'
 		port: 4586
 	},
-	data,
+	data = {},
 	Request,
 	Response;
 
