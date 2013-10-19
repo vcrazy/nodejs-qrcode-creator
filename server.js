@@ -37,11 +37,11 @@ var QR = {
 		Reponse = res;
 
 		var size = Request.query.size,
-			err_corr = Request.query.err_corr.toUpperCase();
+			err_corr = Request.query.err_corr;
 
 		data.text = Request.query.text || data.text;
 		data.size = (size && size >= 1 && size <=10) ? size : data.size;
-		data.err_corr = ['L', 'M', 'Q', 'H'].indexOf(err_corr) > -1 ? err_corr : data.err_corr;
+		data.err_corr = (err_corr && ['L', 'M', 'Q', 'H'].indexOf(err_corr.toUpperCase()) > -1) ? err_corr.toUpperCase() : data.err_corr;
 	},
 	img: function(){
 		return QR.create('Img');
