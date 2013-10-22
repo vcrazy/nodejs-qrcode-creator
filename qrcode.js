@@ -15,6 +15,8 @@
 //
 //---------------------------------------------------------------------
 
+var default_size = 4;
+
 var qrcode = function() {
 
 	//---------------------------------------------------------------------
@@ -406,7 +408,7 @@ var qrcode = function() {
 
 		_this.createTableTag = function(cellSize, margin) {
 
-			cellSize = cellSize || 2;
+			cellSize = cellSize || default_size || 2;
 			margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
 
 			var qrHtml = '';
@@ -446,7 +448,7 @@ var qrcode = function() {
 
 		_this.createImgTag = function(cellSize, margin) {
 
-			cellSize = cellSize || 2;
+			cellSize = cellSize || default_size || 2;
 			margin = (typeof margin == 'undefined')? cellSize * 4 : margin;
 
 			var size = _this.getModuleCount() * cellSize + margin * 2;
